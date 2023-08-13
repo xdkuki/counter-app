@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget{
             child: Text('Kuki Counter App'),
           ),
         ),
-        body:const MyAppHome() ,
+        body:Center (
+          child:Column (
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[const MyAppHome()])) ,
       ),
     );
 }
