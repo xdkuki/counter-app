@@ -44,7 +44,23 @@ class _MyAppState extends State<MyAppHome>{
           mainAxisSize: MainAxisSize.max,
           children:[
             Text('$kuki',textAlign: TextAlign.center,style: const TextStyle(fontSize: 45),),
-            IconButton(onPressed: (){setState((){kuki+=1;});}, icon: const Icon(Icons.plus_one))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: (){setState((){kuki+=1;});}, icon: const Icon(Icons.plus_one)),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: TextStyle(fontSize: 20, //backgroundColor: Color.fromRGBO(0, 0, 0, 50)),
+                    ),
+                  ),
+                  onPressed: (){setState(() {
+                  kuki=0;
+                });}, child: const Text('Restart counting',style:const TextStyle(color: Color.fromRGBO(0, 0, 0, 1)) ,)),
+                IconButton(onPressed: (){setState(() {
+                  kuki -=1;
+                });}, icon: const Icon(Icons.exposure_minus_1))
+              ],),
+            
           ],
 
         );
